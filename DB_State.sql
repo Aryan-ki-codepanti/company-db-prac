@@ -1,1 +1,39 @@
-SELECT * FROM EMPLOYEE;
+
+
+-- EMPLOYEE DATA
+INSERT ALL
+    INTO C_EMPLOYEE VALUES('123456789', 'John', 'B', 'Smith','731 Fondren, Houston, TX', 'M', 30000, NULL, NULL, TO_DATE('1965-01-09', 'YYYY-MM-DD'))
+
+    INTO C_EMPLOYEE VALUES('333445555', 'Franklin', 'T', 'Wong','638 Voss, Houston, TX', 'M', 40000, NULL, NULL, TO_DATE('1955-12-08', 'YYYY-MM-DD'))
+
+    INTO C_EMPLOYEE VALUES('999887777', 'Alicia', 'J', 'Zelaya','3321 Castle, Spring, TX', 'F', 25000, NULL, NULL, TO_DATE('1968-01-19', 'YYYY-MM-DD'))
+
+    INTO C_EMPLOYEE VALUES('987654321', 'Jennifer', 'S', 'Wallace','291 Berry, Bellaire, TX', 'F', 43000, NULL, NULL, TO_DATE('1941-06-20', 'YYYY-MM-DD'))
+
+    INTO C_EMPLOYEE VALUES('666884444', 'Ramesh', 'K', 'Narayan','975 Fire Oak, Humble, TX', 'M', 38000, NULL, NULL, TO_DATE('1962-09-15', 'YYYY-MM-DD'))
+
+    INTO C_EMPLOYEE VALUES('453453453', 'Joyce', 'A', 'English','5631 Rice, Houston, TX', 'F', 25000, NULL, NULL, TO_DATE('1972-07-31', 'YYYY-MM-DD'))
+
+    INTO C_EMPLOYEE VALUES('987987987', 'Ahmad', 'V', 'Jabbar','980 Dallas, Houston, TX', 'M', 25000, NULL, NULL, TO_DATE('1969-03-29', 'YYYY-MM-DD'))
+
+    INTO C_EMPLOYEE VALUES('888665555', 'James', 'E', 'Borg','450 Stone, Houston, TX', 'M', 55000, NULL, NULL, TO_DATE('1937-11-10', 'YYYY-MM-DD'))
+
+SELECT 1 
+FROM DUAL;
+
+-- Supervisors
+UPDATE C_EMPLOYEE
+SET SUPER_SSN = '333445555'
+WHERE FNAME IN ('John', 'Ramesh','Joyce');
+
+UPDATE C_EMPLOYEE
+SET SUPER_SSN = '888665555'
+WHERE FNAME IN ('Franklin', 'Jennifer');
+
+UPDATE C_EMPLOYEE
+SET SUPER_SSN = '987654321'
+WHERE FNAME IN ('Alicia', 'Ahmad');
+
+SELECT * FROM  C_EMPLOYEE;
+
+
