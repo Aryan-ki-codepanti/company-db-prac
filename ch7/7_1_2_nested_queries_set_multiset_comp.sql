@@ -1,0 +1,17 @@
+-- Q4A
+
+SELECT PNUMBER
+FROM PROJECT
+WHERE PNUMBER IN(
+        SELECT PNO
+        FROM C_EMPLOYEE, WORKS_ON
+        WHERE SSN = ESSN
+            AND LNAME = 'Smith'
+    )
+    OR PNUMBER IN (
+        SELECT PNUMBER
+        FROM C_EMPLOYEE, C_DEPARTMENT, PROJECT
+        WHERE SSN = MGR_SSN
+            AND DNUM = DNUMBER
+            AND LNAME = 'Smith'
+    )
